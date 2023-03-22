@@ -11,7 +11,7 @@ const postBtn = document.querySelector('.post-btn');
 const userPost = document.querySelector('.user-post-box');
 const displayPost = document.querySelector('.display-post');
 
-
+//Show name of file selected
 function showFileName() {
   const curFiles = userFile.files;
     for (const file of curFiles) {
