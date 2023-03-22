@@ -241,11 +241,11 @@ input[type=button]:hover {
   place-content: center;
   position: fixed;
   top: 50px;
-  right: 140px;
+  right: 120px;
   width: 300px;
   background-color: var(--app-medium-gray);
   color: var(--app-light-gray);
   border-radius: 10px;
   font-size: 16px;
-  padding: 5px;
+  padding: 10px;
 }
