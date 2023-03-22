@@ -74,7 +74,7 @@ nav ul li + li {
   margin-left: 20px;
 }
 
-.user-image {
+.user-image-header {
   cursor: pointer;
   width: 40%;
   border-radius: 50%;
@@ -89,6 +89,7 @@ nav ul li + li {
 
 #upload-icon {
   width: 20px;
+  cursor: pointer;
 }
 
 .input-section {
@@ -161,8 +162,7 @@ input[type=button]:hover {
 
 /*Section*/
 .display-post {
-  display: flex;
-  flex-direction: column;
+  grid-template-columns: repeat(1, 1fr);
   background-color: var(--app-light-gray);
   width: 600px;
   padding: 10px;
@@ -172,11 +172,14 @@ input[type=button]:hover {
 }
 
 /*Parent div*/
-.user-post-box {
-  display: none;
-}
+
 
 /*Header-post*/
+
+.display-post {
+  background-color: var(--app-dark-bg);
+}
+
 .user-data {
   display: flex;
   flex-direction: row;
@@ -185,29 +188,48 @@ input[type=button]:hover {
 
 .user-post-image {
   width: 45px;
-  padding: 3px;
   border-radius: 50%;
+
 }
 
 .display-username {
   font-weight: 800;
+  margin-left: 5px;
 }
 
 /*content-post-user*/
 
-.user-image-post {
-  border-radius:10px;
-  width: 100%;
-  margin-top: 10px;
+.content-post-user {
+  padding: 10px;
 }
 
-.user-image-post img {
-  border-radius: 10px;
+.content-post-user img {
+  padding: 10px;
 }
+
+.header {
+  padding: 5px;
+}
+
+.user-post-box {
+  background-color: var(--app-light-gray);
+  margin-top: 10px;
+  border-radius: 10px;  
+}
+
+.user-image-post {
+  padding: 10px;
+}
+
 
 .user-text-post {
   font-size: 14px;
   color: var(--app-dark-bg);
+}
+
+.content-post-user img {
+  padding: 10px;
+  border-radius: 10px;
 }
 
 /* ------------------------------- */
@@ -215,14 +237,15 @@ input[type=button]:hover {
 /* ------------------------------- */
 
 .user-info {
+  display: none;
   place-content: center;
   position: fixed;
   top: 50px;
-  right: 180px;
-  width: 200px;
-  background-color: var(--app-light-gray);
+  right: 140px;
+  width: 300px;
+  background-color: var(--app-medium-gray);
+  color: var(--app-light-gray);
   border-radius: 10px;
-  display: none;
-  font-size: 14px;
+  font-size: 16px;
   padding: 5px;
 }

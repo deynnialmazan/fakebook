@@ -4,17 +4,12 @@ const userFile = document.querySelector('.user-file');
 const textUserInput = document.querySelector('.user-input');
 const fileChoosen = document.querySelector('.file-choosen');
 const userInfo = document.querySelector('.user-info');
-const userImage = document.querySelector('.user-image');
+const userImage = document.querySelector('.user-image-header');
 const userInfoP = document.querySelector('.user-info-p');
 const contentPostUser = document.querySelector('.content-post-user');
-const imagePost = document.querySelector('.user-image-uploaded');
-const textPost = document.querySelector('.user-text-post');
 const postBtn = document.querySelector('.post-btn');
 const userPost = document.querySelector('.user-post-box');
-const displayName = document.querySelector('.display-username');
-const displayDate = document.querySelector('.post-date');
 const displayPost = document.querySelector('.display-post');
-const main = document.querySelector('main');
 
 
 function showFileName() {
@@ -130,43 +125,40 @@ userImage.addEventListener('click', () => {
 
 //Posting
 function post() {
-    let fullName = subscriber.name;
-    displayName.innerHTML = fullName;
-    let now = new Date();
-    displayDate.innerHTML = now.toDateString();
-
-    const childDiv = document.createElement('div'); // creating a div
-    childDiv.classList.add('user-image-post');
-
-    const text = document.createElement('p');
-    text.classList.add('user-text-post');
-
-    text.textContent = textUserInput.value;
-    childDiv.appendChild(text);
-    const parentDiv = document.createElement('div'); 
-      parentDiv.classList.add('user-post');
-      parentDiv.appendChild(childDiv);
-      userPost.appendChild(parentDiv);
-
+    const today = new Date();
+    const date = today.toDateString().slice(4);
+    const post = document.createElement('div');
+    post.classList.add('user-post-box');
+    post.innerHTML = `
+              <div class="header">
+                <div class="user-data">
+                    <picture class="user-post-image">
+                        <img class="user-post-image" src="./assets/image/deynni.png">
+                    </picture>
+                    <p class="display-username">${subscriber.name}</p>
+                  </div>
+                  <div class="post-date"><p>${date}</p></div>
+              </div>
+              <div class="content-post-user">
+                <p class="user-text-post">${textUserInput.value}</p>
+              </div>`;
     const curFiles = userFile.files;
 
     for (const file of curFiles) {
-      const image = document.createElement('img'); // creating image
-      image.src = URL.createObjectURL(file);
-      childDiv.appendChild(image);
-      const parentDiv = document.createElement('div'); 
-      parentDiv.classList.add('user-post');
-      parentDiv.appendChild(childDiv);
-      userPost.appendChild(parentDiv);
-      
-    } 
-    displayPost.appendChild(userPost);
-    displayPost.style.display = 'block';
-    userPost.style.display = 'block';
-    fileChoosen.innerHTML = "";
-    textUserInput.value = ""; 
-    main.append(displayPost);     
-};
+    const image = document.createElement('img'); // creating image
+    image.src = URL.createObjectURL(file);
+    image.classList.add('user-image-post');
+    post.append(image);
+                
+    }   
+        
+   displayPost.prepend(post);
+   displayPost.style.display = 'block';
+   fileChoosen.innerHTML = "";
+   textUserInput.value = ""; 
+
+}
+
 
 postBtn.addEventListener('click', () => {
   post();
