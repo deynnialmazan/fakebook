@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-with, initial-scale=1">
+        <meta name="description" content="Fakebook">
+        <meta name="keywords" content="html, css, javascript">
+        <title>Fakebook</title>
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link 
+        rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" 
+        integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" 
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600&display=swap" rel="stylesheet">
+        <link rel="shorcut icon" href="./assets/image/favicon-32x32 copy.png" type="image/S-icon">
+        <link rel="stylesheet" href="./assets/style/index.css" media="all">
+        <script src="./assets/script/index.js" defer></script>
+    </head>
+    <body>
+            <header>
+                <div class="container">
+                    <div class="header">
+                        <h3 class="name-header">Fakebook</h3>
+                        <nav class="menu-header">
+                            <ul>
+                                <li><a class="menu-item" href="#">Friends</a></li>
+                                <li><a class="menu-item" href="#">Pages</a></li>
+                                <li><a class="menu-item" href="#">Groups</a></li>
+                                <li><a class="menu-item" href="#">My ads</a></li>
+                                <li><a class="menu-item" href="#">Settings</a></li>
+                            </ul>
+                        </nav>
+                        <picture class="user">
+                            <img class="user-image" src="./assets/image/deynni.png">
+                        </picture>
+                    </div>
+                </div>
+            </header>
+            <main>
+                <section class="input-section">
+                    <form class="user-post">
+                        <textarea 
+                            class="user-input" name="user-input" 
+                            rows="6" cols="50" placeholder="What's new, Deynni?"></textarea>
+
+                        <div class="input-bar">
+                            <div class="upload-file">
+                                <label><img id="upload-icon" src="./assets/image/picture-2-48.png"/>
+                                <input type="file" class="user-file" name="user-file" style="display: none"></label>
+                                <div class="file-choosen"></div>
+                            </div>
+                            <input type="button" class="post-btn" value="Post">
+                        </div>
+                    </form>
+                </section>
+
+                <section class="display-post">
+                    <div class="user-post-box">
+                        <div class="header">
+                            <div class="user-data">
+                                <picture class="user-post-image">
+                                    <img class="user-post-image" src="./assets/image/deynni.png">
+                                </picture>
+                                <p class="display-username"></p>
+                            </div>
+                            <div class="post-date"></div>
+                        </div>
+                        <div class="content-post-user">
+                            <p class="user-text-post"></p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="section-user-info">
+                    <div class="user-info"><p class="user-info-p"></p></div>
+                </section>
+            </main>
+    </body>
+</html>

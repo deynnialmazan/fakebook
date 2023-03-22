@@ -1,0 +1,228 @@
+@import url(./reset.css);
+
+:root {
+  --app-yellow-hover: #ffff1c;
+  --app-dark-bg: #1a1d28;
+  --app-medium-gray: #343541;
+  --app-orange-text: #ff8e1c;
+  --app-light-gray: #f9f9f9;
+  --app-blue-btn: #6366f1;
+  --app-red-msg: #ff0000;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--app-dark-bg);
+}
+
+.container {
+  width: min(100% - 30px, 1080px);
+  margin-inline: auto;
+}
+main {
+  display: grid;
+  place-content: center;
+}
+
+/* ------------------------------- */
+/* Header                          */
+/* ------------------------------- */
+
+header {
+  width: 100%;
+  letter-spacing: 0.3px;
+  background-color: var(--app-medium-gray)
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  line-height: 50px;
+}
+
+.name-header {
+  letter-spacing: 1px;
+  color: var(--app-blue-btn);
+  font-size: 26px;
+}
+
+nav ul li {
+  display: inline;
+  line-height: 50px;
+}
+
+nav ul li a {
+  color: var(--app-light-gray);
+  font-size: 16px;
+  font-weight: 600;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: color 0.3s ease-in-out; 
+}
+
+nav ul li a:hover {
+  color: var(--app-yellow-hover);
+  font-size: 17px;
+}
+
+
+nav ul li + li {
+  margin-left: 20px;
+}
+
+.user-image {
+  cursor: pointer;
+  width: 40%;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+
+/* ------------------------------- */
+/* Main / Input-section            */
+/* ------------------------------- */
+
+
+#upload-icon {
+  width: 20px;
+}
+
+.input-section {
+  margin-top: 30px;
+  display: grid;
+  place-content: center;
+}
+
+.user-input {
+  width: 600px;
+  height: 250px;
+  background-color: var(--app-medium-gray);
+  border-radius: 10px;
+  text-align: left;
+  padding: 10px;
+  font-size: 16px;
+  color: #ffff;
+  resize: none;
+}
+
+textarea::placeholder {
+  color: #ffff;
+  position: left;
+}
+
+.input-bar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  position: relative;
+  top: -50px;
+  padding: 10px;
+}
+
+input[type=button] {
+  width: 70px;
+  height: 35px;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-align: center;
+  color: var(--app-light-gray);
+  background-color: var(--app-blue-btn);
+  box-shadow: 1px 1px 1px rgb(0 0 0 / 0.3);
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.25s ease-in-out;
+  margin-top: -10px;
+}
+
+input[type=button]:hover {
+  background-color: var(--app-yellow-hover);
+  color: var(--app-dark-bg);
+}
+
+.upload-file {
+  display: flex;
+  flex-direction: row;
+}
+
+.file-choosen {
+  margin-left: 10px;
+  color: var(--app-light-gray);
+  font-size: 14px;
+}
+
+/* ------------------------------- */
+/* Main / Section display-post     */
+/* ------------------------------- */
+
+/*Section*/
+.display-post {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--app-light-gray);
+  width: 600px;
+  padding: 10px;
+  font-size: 14px;
+  border-radius: 10px;
+  display: none;
+}
+
+/*Parent div*/
+.user-post-box {
+  display: none;
+}
+
+/*Header-post*/
+.user-data {
+  display: flex;
+  flex-direction: row;
+  font-size: 14px;
+}
+
+.user-post-image {
+  width: 45px;
+  padding: 3px;
+  border-radius: 50%;
+}
+
+.display-username {
+  font-weight: 800;
+}
+
+/*content-post-user*/
+
+.user-image-post {
+  border-radius:10px;
+  width: 100%;
+  margin-top: 10px;
+}
+
+.user-image-post img {
+  border-radius: 10px;
+}
+
+.user-text-post {
+  font-size: 14px;
+  color: var(--app-dark-bg);
+}
+
+/* ------------------------------- */
+/* Main / section-user-info        */
+/* ------------------------------- */
+
+.user-info {
+  place-content: center;
+  position: fixed;
+  top: 50px;
+  right: 180px;
+  width: 200px;
+  background-color: var(--app-light-gray);
+  border-radius: 10px;
+  display: none;
+  font-size: 14px;
+  padding: 5px;
+}
